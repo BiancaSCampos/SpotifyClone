@@ -9,3 +9,26 @@ export const Home = (props: any) => (
     />
   </Svg>
 );
+
+export const Heart = (props: any) => (
+  <Svg width={20} height={20} fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <Path
+      d="M5.464 1C3 1 1 3.13 1 5.76c0 2.122.781 7.158 8.471 12.25a.833.833 0 0 0 .915 0c7.69-5.092 8.471-10.128 8.471-12.25 0-2.63-1.999-4.76-4.464-4.76-2.465 0-4.464 2.885-4.464 2.885S7.929 1 5.464 1Z"
+      stroke="#fff"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      opacity={0.8}
+    />
+  </Svg>
+);
+
+export const Play = (props: any) => (
+  <Svg width={19} height={22} fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <Path
+      d="M.848 21.71a.822.822 0 0 1-.6-.265.936.936 0 0 1-.248-.64V.906C0 .746.038.592.112.455a.88.88 0 0 1 .305-.33.809.809 0 0 1 .84-.014l16.964 9.95a.877.877 0 0 1 .322.333.951.951 0 0 1 0 .92.876.876 0 0 1-.322.333l-16.964 9.95a.808.808 0 0 1-.409.112Z"
+      fill="#fff"
+      opacity={0.8}
+    />
+  </Svg>
+);
