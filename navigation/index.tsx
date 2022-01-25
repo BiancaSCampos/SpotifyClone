@@ -15,7 +15,7 @@ import useColorScheme from '../hooks/useColorScheme';
 import ModalScreen from '../screens/ModalScreen';
 import NotFoundScreen from '../screens/NotFoundScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
-import {RootStackParamList, RootTabParamList, RootTabScreenProps} from '../types';
+import {AlbumScreenParamList, RootStackParamList, RootTabParamList, RootTabScreenProps} from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
 import HomeScreen from '../screens/Home/HomeScreen';
 import AlbumScreen from '../screens/Album/AlbumScreen';
@@ -39,7 +39,7 @@ function RootNavigator() {
     <Stack.Navigator>
       <Stack.Screen name="Root" component={BottomTabNavigator} options={{headerShown: false}} />
       <Stack.Screen name="NotFound" component={NotFoundScreen} options={{title: 'Oops!'}} />
-      <Stack.Screen name="Album" component={AlbumScreen} />
+
       <Stack.Group screenOptions={{presentation: 'modal'}}>
         <Stack.Screen name="Modal" component={ModalScreen} />
       </Stack.Group>
@@ -64,7 +64,7 @@ function BottomTabNavigator() {
       }}>
       <BottomTab.Screen
         name="Home"
-        component={HomeScreen}
+        component={AlbumScreenNaV}
         options={({navigation}: RootTabScreenProps<'Home'>) => ({
           title: 'Home',
           headerShown: false,
@@ -96,5 +96,17 @@ function BottomTabNavigator() {
         }}
       />
     </BottomTab.Navigator>
+  );
+}
+
+const Album = createNativeStackNavigator<AlbumScreenParamList>();
+
+function AlbumScreenNaV() {
+  return (
+    <Album.Navigator>
+      <Album.Screen name="Home" component={HomeScreen} options={{headerShown: false}} />
+
+      <Album.Screen name="AlbumScreen" component={AlbumScreen} options={{headerTitle: 'Album'}} />
+    </Album.Navigator>
   );
 }
