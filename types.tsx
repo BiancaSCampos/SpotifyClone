@@ -27,6 +27,12 @@ export type RootTabParamList = {
   Search: undefined;
   Library: undefined;
   Premium: undefined;
+  Album: undefined;
+};
+
+export type AlbumScreenParamList = {
+  Home: undefined;
+  AlbumScreen: undefined;
 };
 
 export type RootTabScreenProps<Screen extends keyof RootTabParamList> = CompositeScreenProps<
@@ -38,4 +44,15 @@ export type AlbumType = {
   id: string;
   imageUri: string;
   artistsHeadline: string;
+  name: string;
+  by: string;
+  numberOfLikes: number;
+  songs: Song[];
+};
+
+export type Song = {
+  id: string;
+  imageUri: string;
+  title: string;
+  artist: string;
 };
